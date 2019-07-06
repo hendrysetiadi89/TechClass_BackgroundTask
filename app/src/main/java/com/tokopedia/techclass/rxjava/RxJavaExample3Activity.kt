@@ -3,7 +3,6 @@ package com.tokopedia.techclass.rxjava
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.widget.Toast
 import com.tokopedia.techclass.R
 import io.reactivex.Observable
 import io.reactivex.Observer
@@ -14,7 +13,7 @@ import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_rxjava_example_3.*
 
 class RxJavaExample3Activity : AppCompatActivity() {
-    @SuppressLint("CheckResult")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_rxjava_example_3)

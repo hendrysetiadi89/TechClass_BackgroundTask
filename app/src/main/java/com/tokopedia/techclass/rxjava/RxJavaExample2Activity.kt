@@ -20,10 +20,6 @@ import java.net.URL
 
 class RxJavaExample2Activity : AppCompatActivity() {
 
-    val compositeDisposable = CompositeDisposable()
-
-
-    @SuppressLint("CheckResult")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_rxjava_example_2)
@@ -36,7 +32,7 @@ class RxJavaExample2Activity : AppCompatActivity() {
                 .subscribe(object : Observer<String> {
                     override fun onComplete() {}
                     override fun onSubscribe(d: Disposable) {
-                        compositeDisposable.add(d)
+
                     }
                     override fun onNext(t: String) {
                         textView.text = t
@@ -46,10 +42,6 @@ class RxJavaExample2Activity : AppCompatActivity() {
                     }
                 })
         }
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
     }
 
     fun fetchFromSite():String{
