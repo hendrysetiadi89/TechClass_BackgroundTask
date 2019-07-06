@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">TechClass</string>
+    <string name="rx_java">Rx Java</string>
+    <string name="async_task">AsyncTask</string>
 </resources>

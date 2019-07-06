@@ -1,12 +1,14 @@
 package com.tokopedia.techclass
 
-import android.os.AsyncTask
-import android.support.v7.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.widget.TextView
+import android.support.v7.app.AppCompatActivity
+import com.tokopedia.techclass.asynctask.AsyncTaskExample1Activity
+import com.tokopedia.techclass.asynctask.AsyncTaskExample2Activity
+import com.tokopedia.techclass.rxjava.RxJavaExample1Activity
+import com.tokopedia.techclass.rxjava.RxJavaExample2Activity
+import com.tokopedia.techclass.rxjava.RxJavaExample3Activity
 import kotlinx.android.synthetic.main.activity_main.*
-import java.lang.ref.WeakReference
 
 class MainActivity : AppCompatActivity() {
 
@@ -14,34 +16,20 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        MyAsyncTask().execute()
-        RandomGeneratorAsyncTask(textView).execute()
-    }
-}
-
-class RandomGeneratorAsyncTask(textView: TextView) : AsyncTask<Void, Void, Int>() {
-    var weakReference: WeakReference<TextView> = WeakReference(textView)
-
-    override fun doInBackground(vararg voids: Void): Int? {
-        Thread.sleep(1000)
-        // will return random value (0 to 100) after 1 second
-        return (Math.random() * 100).toInt()
-    }
-
-    override fun onPostExecute(result: Int?) {
-        super.onPostExecute(result)
-        val textView = weakReference.get()
-        if (textView!=null) {
-            textView.text = result.toString()
+        button_async_1.setOnClickListener {
+            startActivity(Intent(this, AsyncTaskExample1Activity::class.java))
         }
-    }
-}
-
-class MyAsyncTask : AsyncTask<Void, Void, Void>() {
-
-    override fun doInBackground(vararg voids: Void): Void? {
-        Thread.sleep(1000)
-        Log.i("MY TAG", "This message will show after 1 second in log")
-        return null
+        button_async_2.setOnClickListener {
+            startActivity(Intent(this, AsyncTaskExample2Activity::class.java))
+        }
+        button_rxjava_1.setOnClickListener {
+            startActivity(Intent(this, RxJavaExample1Activity::class.java))
+        }
+        button_rxjava_2.setOnClickListener {
+            startActivity(Intent(this, RxJavaExample2Activity::class.java))
+        }
+        button_rxjava_3.setOnClickListener {
+            startActivity(Intent(this, RxJavaExample3Activity::class.java))
+        }
     }
 }
