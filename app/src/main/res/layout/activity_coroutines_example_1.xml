@@ -12,6 +12,22 @@
             android:id="@+id/button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Show Toast after 1 s"/>
+            android:text="Show Hello World in log"/>
+
+    <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    <Button
+            android:id="@+id/button_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Show Hello World"/>
+
+    <TextView
+            android:id="@+id/textView_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
 </LinearLayout>

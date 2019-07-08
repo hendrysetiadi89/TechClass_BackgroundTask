@@ -19,13 +19,13 @@ class RxJavaExample1Activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_rxjava_example_1)
         val stream = Observable.just(5).map {
-            Log.i("TEST", Thread.currentThread().toString())
+            println(Thread.currentThread().toString())
             it * it
         }
 
         button.setOnClickListener {
             stream.map {
-                Log.i("TEST", Thread.currentThread().toString())
+                println(Thread.currentThread().toString())
                 Thread.sleep(1000)
                 it }
                 .observeOn(AndroidSchedulers.mainThread())
@@ -34,7 +34,7 @@ class RxJavaExample1Activity : AppCompatActivity() {
                     override fun onComplete() {}
                     override fun onSubscribe(d: Disposable) {}
                     override fun onNext(t: Int) {
-                        Log.i("TEST", Thread.currentThread().toString())
+                        println(Thread.currentThread().toString())
                         Toast.makeText(this@RxJavaExample1Activity, t.toString(), Toast.LENGTH_LONG).show()
                     }
                     override fun onError(e: Throwable) {

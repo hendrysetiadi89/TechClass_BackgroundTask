@@ -25,7 +25,7 @@
             android:id="@+id/button_rxjava_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RxJava Example"/>
+            android:text="RxJava Example 1"/>
 
     <Button
             android:id="@+id/button_rxjava_2"
@@ -38,5 +38,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="RxJava Example 3"/>
+
+    <Button
+            android:id="@+id/button_coroutines_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Coroutines Example 1"/>
 
 </LinearLayout>

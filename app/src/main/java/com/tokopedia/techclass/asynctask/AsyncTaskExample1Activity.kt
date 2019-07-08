@@ -15,7 +15,7 @@ class AsyncTaskExample1Activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_asynctask_example_1)
 
-        MyAsyncTask().execute()
+        MyFirstAsyncTask().execute()
         button.setOnClickListener {
             RandomGeneratorAsyncTask(textView).execute()
         }
@@ -27,14 +27,14 @@ class RandomGeneratorAsyncTask(textView: TextView) : AsyncTask<Void, Void, Int>(
 
     override fun doInBackground(vararg voids: Void): Int? {
         Thread.sleep(1000)
-        Log.i("MY TAG", Thread.currentThread().toString())
+        println(Thread.currentThread().toString())
         // will return random value (0 to 100) after 1 second
         return (Math.random() * 100).toInt()
     }
 
     override fun onPostExecute(result: Int?) {
         super.onPostExecute(result)
-        Log.i("MY TAG", Thread.currentThread().toString())
+        println(Thread.currentThread().toString())
         val textView = weakReference.get()
         if (textView!=null) {
             textView.text = result.toString()
@@ -42,11 +42,12 @@ class RandomGeneratorAsyncTask(textView: TextView) : AsyncTask<Void, Void, Int>(
     }
 }
 
-class MyAsyncTask : AsyncTask<Void, Void, Void>() {
+class MyFirstAsyncTask : AsyncTask<Void, Void, Void>() {
 
     override fun doInBackground(vararg voids: Void): Void? {
         Thread.sleep(1000)
-        Log.i("MY TAG", "This message will show after 1 second in log")
+        println("This message will show after 1 second in log")
         return null
     }
 }
+
