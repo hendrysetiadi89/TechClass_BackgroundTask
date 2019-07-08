@@ -12,7 +12,7 @@
             android:id="@+id/button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Show Hello World in log"/>
+            android:text="Show Random Value"/>
 
     <TextView
             android:id="@+id/textView"
@@ -23,11 +23,23 @@
             android:id="@+id/button_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Show Hello World"/>
+            android:text="Show Random Value"/>
 
     <TextView
             android:id="@+id/textView_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
+
+    <Button
+            android:id="@+id/button_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Show Random Value"/>
+
+    <TextView
+            android:id="@+id/textView_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
 
 </LinearLayout>
