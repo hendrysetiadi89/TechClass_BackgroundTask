@@ -23,7 +23,7 @@
             android:id="@+id/button_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Show Random Value"/>
+            android:text="Show Random Value - async"/>
 
     <TextView
             android:id="@+id/textView_2"
@@ -34,7 +34,7 @@
             android:id="@+id/button_3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Show Random Value"/>
+            android:text="Show Paralel Async - Example"/>
 
     <TextView
             android:id="@+id/textView_3"

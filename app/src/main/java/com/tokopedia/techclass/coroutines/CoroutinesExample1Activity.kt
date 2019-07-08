@@ -41,11 +41,11 @@ class CoroutinesExample1Activity : AppCompatActivity(), CoroutineScope {
         button_3.setOnClickListener {
             launch {
                 val deferred1 = async(Dispatchers.IO) {
-                    Thread.sleep(2000)
+                    delay(2000)
                     "Jakarta"
                 }
                 val deferred2 = async(Dispatchers.IO) {
-                    Thread.sleep(2000)
+                    delay(2000)
                     "Bandung"
                 }
                 val result = deferred1.await() + " " + deferred2.await()
@@ -54,6 +54,11 @@ class CoroutinesExample1Activity : AppCompatActivity(), CoroutineScope {
                 }
             }
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
     }
 
 

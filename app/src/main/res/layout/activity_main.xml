@@ -45,4 +45,10 @@
             android:layout_height="wrap_content"
             android:text="Coroutines Example 1"/>
 
+    <Button
+            android:id="@+id/button_coroutines_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Coroutines Example 2"/>
+
 </LinearLayout>

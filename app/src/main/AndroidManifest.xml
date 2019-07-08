@@ -28,7 +28,10 @@
                   android:label="@string/rx_java"/>
         <activity android:name=".rxjava.RxJavaExample3Activity"
                   android:label="@string/rx_java"/>
-        <activity android:name=".coroutines.CoroutinesExample1Activity"/>
+        <activity android:name=".coroutines.CoroutinesExample1Activity"
+                  android:label="@string/coroutines"/>
+        <activity android:name=".coroutines.CoroutinesExample2Activity"
+                  android:label="@string/coroutines"/>
     </application>
 
 </manifest>

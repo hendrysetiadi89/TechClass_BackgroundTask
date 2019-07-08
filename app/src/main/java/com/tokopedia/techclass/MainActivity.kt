@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import com.tokopedia.techclass.asynctask.AsyncTaskExample1Activity
 import com.tokopedia.techclass.asynctask.AsyncTaskExample2Activity
 import com.tokopedia.techclass.coroutines.CoroutinesExample1Activity
+import com.tokopedia.techclass.coroutines.CoroutinesExample2Activity
 import com.tokopedia.techclass.rxjava.RxJavaExample1Activity
 import com.tokopedia.techclass.rxjava.RxJavaExample2Activity
 import com.tokopedia.techclass.rxjava.RxJavaExample3Activity
@@ -34,6 +35,9 @@ class MainActivity : AppCompatActivity() {
         }
         button_coroutines_1.setOnClickListener {
             startActivity(Intent(this, CoroutinesExample1Activity::class.java))
+        }
+        button_coroutines_2.setOnClickListener {
+            startActivity(Intent(this, CoroutinesExample2Activity::class.java))
         }
     }
 }
