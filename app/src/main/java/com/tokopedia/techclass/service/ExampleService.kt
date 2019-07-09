@@ -15,11 +15,6 @@ class ExampleService : Service(), CoroutineScope {
     override val coroutineContext: CoroutineContext
         get() = Dispatchers.IO
 
-    override fun onCreate() {
-        super.onCreate()
-        showToast("Service Started");
-    }
-
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         launch {
             for (i in 0 until 5) {
@@ -35,6 +30,11 @@ class ExampleService : Service(), CoroutineScope {
         return null
     }
 
+    override fun onCreate() {
+        super.onCreate()
+        showToast("Service Started");
+    }
+
     override fun onDestroy() {
         showToast("Service Finished");
         super.onDestroy()
@@ -44,3 +44,5 @@ class ExampleService : Service(), CoroutineScope {
         Handler().post { Toast.makeText(this@ExampleService, text, Toast.LENGTH_SHORT).show() }
     }
 }
+
+
